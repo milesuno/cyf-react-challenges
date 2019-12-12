@@ -1,0 +1,19 @@
+.episode-box {
+	display: flex;
+	flex-direction: column;
+
+	background: linen;
+    
+    border: solid;
+    border-color: burlywood;
+    border-radius: 5%;
+
+    margin: 15px;
+    
+	width: 30%;
+}
+
+img {
+	align-self: center;
+	width: fit-content;
+}
