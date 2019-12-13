@@ -8,11 +8,19 @@ class EpisodeList extends Component {
 	render() {
 		return (
 			<main className="episode-list">
-				<EpisodeJumpDropdown />
+				<EpisodeJumpDropdown data={this.props.data} />
 				<h2>All Episode Details</h2>
-				{json.map(episode => {
-					return <Episode key={episode.id} episode={episode} />;
-				})}
+				{this.props.data
+					? this.props.data.map(episode => {
+							return (
+								<Episode key={episode.id} episode={episode} />
+							);
+					  })
+					: json.map(episode => {
+							return (
+								<Episode key={episode.id} episode={episode} />
+							);
+					  })}
 				{/* Add button to route back */}
 			</main>
 		);
