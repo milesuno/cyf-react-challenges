@@ -1,21 +1,18 @@
 import React, { Component } from "react";
-import './episode.css';
+import "./episode.css";
 
 class Episode extends Component {
 	constructor(props) {
-        super(props);
-        this.state = {
-            img: this.props.episode.image
-        }
+		super(props);
 	}
 
 	render() {
 		const { episode } = this.props;
-        const { name, number, season, airdate, image, summary } = episode;
+		const { id, name, number, season, airdate, image, summary } = episode;
 		return (
-			<div className='episode-box'>
-				<h1>{`S${season} E${number}: ${name}`}</h1>
-                <img src={image ? image.medium : null} />
+			<div id={id} className="episode-box">
+				<h3>{`S${season} E${number}: ${name}`}</h3>
+				<img src={image ? image.medium : null} />
 				<p>{summary}</p>
 				<p>{`Air Date: ${airdate}`}</p>
 			</div>
